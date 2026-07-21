@@ -1,0 +1,16 @@
+# Dependencias
+node_modules/
+
+# Variables de entorno (contienen datos sensibles)
+.env
+
+# Archivos de build
+dist/
+build/
+
+# Logs
+*.log
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
