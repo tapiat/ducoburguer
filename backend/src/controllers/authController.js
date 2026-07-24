@@ -68,4 +68,16 @@ async function login(req, res) {
   }
 }
 
-module.exports = { register, login };
+// GET /api/auth/me - devuelve los datos del usuario logueado
+async function me(req, res) {
+  try {
+    const user = await UserModel.findById(req.user.id);
+    if (!user) return res.status(404).json({ error: 'Usuario no encontrado' });
+    res.json({ user });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: 'Error al obtener el perfil' });
+  }
+}
+
+module.exports = { register, login, me };
