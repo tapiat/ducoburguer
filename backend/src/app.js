@@ -3,6 +3,7 @@ const cors = require('cors');
 require('dotenv').config();
 
 const authRoutes = require('./routers/authRoutes');
+const productRoutes = require('./routers/productRoutes');
 
 const app = express();
 
@@ -12,6 +13,7 @@ app.use(express.json());
 app.get('/api/health', (req, res) => res.json({ status: 'ok', service: 'duco-burger-backend' }));
 
 app.use('/api/auth', authRoutes);
+app.use('/api/products', productRoutes);
 
 app.use((req, res) => res.status(404).json({ error: 'Ruta no encontrada' }));
 
