@@ -4,6 +4,7 @@ require('dotenv').config();
 
 const authRoutes = require('./routers/authRoutes');
 const productRoutes = require('./routers/productRoutes');
+const orderRoutes = require('./routers/orderRoutes');
 
 const app = express();
 
@@ -14,6 +15,7 @@ app.get('/api/health', (req, res) => res.json({ status: 'ok', service: 'duco-bur
 
 app.use('/api/auth', authRoutes);
 app.use('/api/products', productRoutes);
+app.use('/api/orders', orderRoutes);
 
 app.use((req, res) => res.status(404).json({ error: 'Ruta no encontrada' }));
 
