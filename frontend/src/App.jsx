@@ -1,4 +1,5 @@
 import { Routes, Route } from 'react-router-dom';
+import Navbar from './components/Navbar';
 import MenuPage from './pages/MenuPage';
 import CartPage from './pages/CartPage';
 import LoginPage from './pages/LoginPage';
@@ -9,7 +10,7 @@ import AdminPage from './pages/AdminPage';
 function App() {
   return (
     <div>
-      <h1>🍔 Duco Burger</h1>
+      <Navbar />
 
       <Routes>
         <Route path="/" element={<MenuPage />} />
