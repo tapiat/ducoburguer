@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import api from '../services/api';
+import ProductCard from '../components/ProductCard';
 
 function MenuPage() {
   const [products, setProducts] = useState([]);
@@ -30,14 +31,11 @@ function MenuPage() {
       {products.length === 0 ? (
         <p>No hay productos disponibles todavía.</p>
       ) : (
-        <ul>
+        <div className="product-grid">
           {products.map((product) => (
-            <li key={product.id}>
-              <strong>{product.name}</strong> — ${Number(product.price).toLocaleString('es-CL')}
-              <p>{product.description}</p>
-            </li>
+            <ProductCard key={product.id} product={product} />
           ))}
-        </ul>
+        </div>
       )}
     </div>
   );

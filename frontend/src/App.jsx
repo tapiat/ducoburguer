@@ -11,7 +11,6 @@ function App() {
   return (
     <div>
       <Navbar />
-
       <Routes>
         <Route path="/" element={<MenuPage />} />
         <Route path="/cart" element={<CartPage />} />
